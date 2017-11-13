@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<view class="container">
+<!-- <view class="container">
   <view class="userinfo">
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
     <block wx:else>
@@ -9,5 +9,34 @@
   </view>
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
+  </view>
+</view> -->
+<view class="top">
+  <text>剩余8天年假</text>
+</view>
+
+<view class="cell">
+  <view class="cell-item">
+    <text>请假</text>
+    <image src="../../image/icon-right.png"></image>
+  </view>
+  <view class="cell-item">
+    <text>历史</text>
+    <image src="../../image/icon-right.png"></image>
+  </view>
+  <view class="cell-item">
+    <text>团队</text>
+    <image src="../../image/icon-right.png"></image>
+  </view>
+  <view class="cell-item">
+    <text>消息</text>
+    <image src="../../image/icon-right.png"></image>
+  </view>
+</view>
+
+<view class="cell">
+  <view class="cell-item">
+    <text>我的</text>
+    <image src="../../image/icon-right.png"></image>
   </view>
 </view>
