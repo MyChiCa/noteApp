@@ -16,7 +16,7 @@
 </view>
 
 <view class="cell">
-  <view class="cell-item">
+  <view class="cell-item" data-index="0" bindtap="itemClick">
     <text>请假</text>
     <image src="../../image/icon-right.png"></image>
   </view>
@@ -24,7 +24,7 @@
     <text>历史</text>
     <image src="../../image/icon-right.png"></image>
   </view>
-  <view class="cell-item">
+  <view class="cell-item" data-index="2" bindtap="itemClick">
     <text>团队</text>
     <image src="../../image/icon-right.png"></image>
   </view>
@@ -40,3 +40,13 @@
     <image src="../../image/icon-right.png"></image>
   </view>
 </view>
+
+<view class="cell">
+  <view class="cell-item">
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+      <view class="picker">当前选择:{{array[index]}}</view>
+    </picker>
+  </view>
+</view>
+
+

@@ -30,6 +30,9 @@ page{
   text-align: center;
   line-height: 200rpx;
   background: #FFF;
+  border-top:1rpx solid #E5E5E5;
+  border-bottom:1rpx solid #E5E5E5;
+  margin-top: 30rpx;
 }
 
 .top text{
@@ -64,6 +67,13 @@ page{
 }
 .cell .cell-item+.cell-item{
   border-top: 1rpx solid #E5E5E5;
+}
+
+picker{
+  width: 100%;
+}
+.picker{
+  width: 100%;
 }
 
 

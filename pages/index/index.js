@@ -7,7 +7,16 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    array:['中国','日本','美国'],
+    index:0,
+    items:[{
+      page: '../leave/leave'
+      }, {
+        page: ''
+      },{
+        page: '../team/team'
+      }]
   },
   //事件处理函数
   bindViewTap: function() {
@@ -50,5 +59,18 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+  bindPickerChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      index: e.detail.value
+    })
+  },
+  itemClick:function(event){
+    var index = event.currentTarget.dataset.index;
+    var page = this.data.items[index].page;
+    wx.navigateTo({
+      url: page
+    });
   }
 })
