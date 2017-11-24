@@ -1,51 +1,36 @@
-<!--index.wxml-->
-<!-- <view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
-</view> -->
 <view class="top">
-  <text>剩余8天年假</text>
+  <view class="top-title">杭州映兔科技</view>
+  <view class="top-subtitle">剩余8天年假</view>
 </view>
 
+<!--基本功能 有加入团队显示-->
 <view class="cell">
   <view class="cell-item" data-index="0" bindtap="itemClick">
-    <text>请假</text>
+    <text class="cell-title">请假</text>
     <image src="../../image/icon-right.png"></image>
   </view>
+  <view class="cell-item" data-index="1" bindtap="itemClick">
+    <text class="cell-title">历史</text>
+    <image src="../../image/icon-right.png"></image>
+  </view>
+  
   <view class="cell-item">
-    <text>历史</text>
+    <text class="cell-title">消息</text>
     <image src="../../image/icon-right.png"></image>
   </view>
+</view>
+
+<!--管理员功能-->
+<view class="cell">
+  <!--没有建立团队-->
   <view class="cell-item" data-index="2" bindtap="itemClick">
-    <text>团队</text>
+    <text class="cell-title">新建团队</text>
     <image src="../../image/icon-right.png"></image>
   </view>
-  <view class="cell-item">
-    <text>消息</text>
+  <!--已有建立团队-->
+  <view class="cell-item" data-index="3" bindtap="itemClick">
+    <text class="cell-title">管理团队</text>
     <image src="../../image/icon-right.png"></image>
-  </view>
-</view>
-
-<view class="cell">
-  <view class="cell-item">
-    <text>我的</text>
-    <image src="../../image/icon-right.png"></image>
-  </view>
-</view>
-
-<view class="cell">
-  <view class="cell-item">
-    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
-      <view class="picker">当前选择:{{array[index]}}</view>
-    </picker>
   </view>
 </view>
 

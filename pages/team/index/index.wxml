@@ -1,0 +1,34 @@
+<!--管理团队主页-->
+<view class="title">{{title}}</view>
+<view class="cell">
+ <view class="cell-item" bindtap="editBtnClick">
+    <text class="cell-title">编辑团队名称</text>
+    <image src="../../../image/icon-right.png"></image>
+  </view>
+  <view class="cell-item">
+    <text class="cell-title">请假申请</text>
+    <text class="cell-subtitle cell-subtitle-red">6</text>
+    <image src="../../../image/icon-right.png"></image>
+  </view>
+  <view class="cell-item">
+    <text class="cell-title">入职申请</text>
+    <text class="cell-subtitle cell-subtitle-red">3</text>
+    <image src="../../../image/icon-right.png"></image>
+  </view>
+  <view class="cell-item">
+    <text class="cell-title">成员管理</text>
+    <text class="cell-subtitle">122</text>
+    <image src="../../../image/icon-right.png"></image>
+  </view>
+</view>
+
+<view class="form">
+  <view class="form-item">
+    <button class="form-button" open-type="share">邀请新成员</button>
+  </view>
+</view>
+  
+
+<modal hidden="{{hiddenmodalput}}" title="修改名称" confirm-text="提交" bindcancel="cancel" bindconfirm="confirm">  
+    <input bindinput="bindModelText" value="{{modelText}}"  type="text" placeholder="请输入团队名称"/>
+</modal>

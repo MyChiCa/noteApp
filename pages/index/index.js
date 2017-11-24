@@ -8,14 +8,14 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    array:['中国','日本','美国'],
-    index:0,
     items:[{
       page: '../leave/leave'
       }, {
-        page: ''
+        page: '../history/history'
       },{
-        page: '../team/team'
+        page: '../team/add/add'
+      },{
+        page: '../team/index/index'
       }]
   },
   //事件处理函数
@@ -60,17 +60,18 @@ Page({
       hasUserInfo: true
     })
   },
-  bindPickerChange: function (e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
-    this.setData({
-      index: e.detail.value
-    })
-  },
   itemClick:function(event){
     var index = event.currentTarget.dataset.index;
     var page = this.data.items[index].page;
     wx.navigateTo({
       url: page
     });
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
   }
 })

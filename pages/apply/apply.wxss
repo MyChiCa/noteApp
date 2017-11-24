@@ -1,0 +1,5 @@
+.title{
+  padding: 32rpx;
+  background: #353535;
+  color: #FFF;
+}

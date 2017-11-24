@@ -1,0 +1,8 @@
+.title{
+  padding: 32rpx;
+  background: #353535;
+  color: #FFF;
+}
+.cell-item .cell-subtitle-red{
+  color: #FF0000;
+}

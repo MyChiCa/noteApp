@@ -1,11 +1,23 @@
-// pages/team/team.js
+// pages/history/history.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-      name:''
+      array:[{
+        title:"生病请假",
+        content:"病假工资由用人单位按不低于当地最低工资标准80%自主确定支付标准。",
+        date:"2017-12-02"
+      },{
+        title: "装病请假",
+        content:"病假工资由用人单位按不低于当地最低工资标准80%自主确定支付标准。",
+        date: "2017-12-03"
+      },{
+        title: "智能请假",
+        content:"病假工资由用人单位按不低于当地最低工资标准80%自主确定支付标准。",
+        date: "2017-12-04"
+      }]
   },
 
   /**
@@ -54,13 +66,6 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
   
   }
 })

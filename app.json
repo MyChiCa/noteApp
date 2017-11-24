@@ -2,13 +2,16 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/team/team",
-    "pages/leave/leave"
+    "pages/leave/leave",
+    "pages/history/history",
+    "pages/apply/apply",
+    "pages/team/add/add",
+    "pages/team/index/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#353535",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "请假记录",
     "navigationBarTextStyle": "light",
     "backgroundColor": "#EFEFF4"
   }

@@ -13,7 +13,7 @@
         <!--开始日期-->
         <view class="form-item">
           <view class="form-picker">
-            <picker mode="date" value="{{date}}" start="{{start}}" bindchange="bindDateChange">
+            <picker mode="date" value="{{date}}" bindchange="bindDateChange">
               <view class="picker">
                 开始时间: {{date}}
               </view>
@@ -34,7 +34,7 @@
         <!--/请假天数-->
 
         <view class="form-item">
-            <button class="form-button">提交</button>
+            <button type="primary" class="form-button">提交</button>
         </view>
     </form>
   </view>

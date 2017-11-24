@@ -1,0 +1,8 @@
+<!--pages/history/history.wxml-->
+<view class="cell">
+    <view class="cell-item" wx:for="{{array}}" wx:key="index">
+      <text class="cell-title">{{item.title}}</text>
+      <text class="cell-subtitle">{{item.date}}</text>
+      <image src="../../image/icon-right.png"></image>
+  </view>
+</view>

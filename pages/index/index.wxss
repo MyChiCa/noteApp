@@ -1,80 +1,17 @@
-/**index.wxss**/
-/* .userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
-}
-
-.userinfo-nickname {
-  color: #aaa;
-}
-
-.usermotto {
-  margin-top: 200px;
-} */
-
-page{
-  background: #EFEFF4;
-}
-
 .top{
-  width: 750rpx;
-  height: 200rpx;
-  text-align: center;
-  line-height: 200rpx;
-  background: #FFF;
-  border-top:1rpx solid #E5E5E5;
-  border-bottom:1rpx solid #E5E5E5;
-  margin-top: 30rpx;
+  background: #353535;
+  color: #FFF;
 }
 
-.top text{
+.top-title{
+  padding:32rpx;
+  text-align: center;
   font-size: 40rpx;
 }
-
-.cell{
-  width: 750rpx;
-  height:auto;
-  padding-left: 32rpx;
-  border-top: 1rpx solid #E5E5E5;
-  border-bottom: 1rpx solid #E5E5E5;
-  box-sizing: border-box;
-  background: #FFFFFF;
-  margin-top: 40rpx;
+.top-subtitle{
+  padding:0 32rpx 32rpx;
+  text-align: center;
+  font-size: 32rrpx;
 }
-
-.cell .cell-item{
-  padding-right:32rpx; 
-  height: 88rpx;
-  line-height: 88rpx;
-  font-size: 34rpx;
-  display: flex;
-}
-.cell-item text{
-  flex: 1;
-}
-.cell-item image{
-  padding:31rpx  0;
-  width: 16rpx;
-  height: 26rpx;
-}
-.cell .cell-item+.cell-item{
-  border-top: 1rpx solid #E5E5E5;
-}
-
-picker{
-  width: 100%;
-}
-.picker{
-  width: 100%;
-}
-
 
 

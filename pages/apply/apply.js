@@ -2,17 +2,11 @@ const util = require('../../utils/util.js')
 const date = new Date();
 const start = util.formatDate(date);
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-     date:start,
-     array:['半天','一天','两天','三天','四天','五天','六天','七天'],
-     objectArray:[{id:0,value:0.5}, {id: 1,value: 1}, {id: 2,
-         value: 2}, {id: 3,value: 3}, {id: 4,value: 4}, {id: 5,value: 5}, {id: 6,
-         value:6 }, {id: 7, value: 7}],
-     days:1
+    name:'', //真是姓名
+    position:'', //职位
+    phone:'', //手机号
+    date: start  //入职日期
   },
 
   /**
@@ -63,14 +57,9 @@ Page({
   onReachBottom: function () {
   
   },
-  bindDateChange(e){
+  bindDateChange(e) {
     this.setData({
       date: e.detail.value
-    })
-  },
-  bindDaysChange(e){
-    this.setData({
-      days: e.detail.value
     })
   }
 })
