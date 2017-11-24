@@ -2,6 +2,7 @@
   <view class="form">
     <form bindsubmit="formSubmit">
         <view class="form-item">
+          <view class="form-label">团队名称</view>
           <input name="name" maxlength="20" class="form-input" placeholder="请输入团队名称" />
         </view>
         <view class="form-item">
