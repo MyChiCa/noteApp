@@ -5,18 +5,18 @@
     <text class="cell-title">编辑团队名称</text>
     <image src="../../../image/icon-right.png"></image>
   </view>
-  <view class="cell-item">
+  <view class="cell-item" bindtap="leaveBtnClick">
     <text class="cell-title">请假申请</text>
     <text class="cell-subtitle cell-subtitle-red">6</text>
     <image src="../../../image/icon-right.png"></image>
   </view>
-  <view class="cell-item">
+  <view class="cell-item" bindtap="applyBtnClick">
     <text class="cell-title">入职申请</text>
     <text class="cell-subtitle cell-subtitle-red">3</text>
     <image src="../../../image/icon-right.png"></image>
   </view>
-  <view class="cell-item">
-    <text class="cell-title">成员管理</text>
+  <view class="cell-item" bindtap="listBtnClick">
+    <text class="cell-title">成员列表</text>
     <text class="cell-subtitle">122</text>
     <image src="../../../image/icon-right.png"></image>
   </view>

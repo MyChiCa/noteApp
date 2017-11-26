@@ -6,7 +6,10 @@
     "pages/history/history",
     "pages/apply/apply",
     "pages/team/add/add",
-    "pages/team/index/index"
+    "pages/team/index/index",
+    "pages/team/leave/leave",
+    "pages/team/apply/apply",
+    "pages/team/list/list"
   ],
   "window": {
     "backgroundTextStyle": "light",

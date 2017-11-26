@@ -1,0 +1,22 @@
+/* pages/team/apply/apply.wxss */
+
+.list{
+  padding:0 32rpx 32rpx;
+}
+.apply{
+   margin:50rpx 0;
+   padding: 20rpx;
+   background: #FFF;
+   border:1rpx solid #E5E5E5; 
+}
+
+.apply-head{
+  display: flex;
+}
+
+.apply-name{
+  flex: 1;
+}
+.apply-content{
+  padding-top: 20rpx;
+}

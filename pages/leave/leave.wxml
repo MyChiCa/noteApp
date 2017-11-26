@@ -4,7 +4,7 @@
     <form>
         <view class="form-item">
           <view class="form-label">请假主题</view>
-          <input class="form-input" placeholder="请假主题" />
+          <input class="form-input" maxlength="10" placeholder="请假主题"/>
         </view>
         <view class="form-item">
           <view class="form-label">请假理由</view>

@@ -93,5 +93,25 @@ Page({
       title: this.data.modelText,
       hiddenmodalput: !this.data.hiddenmodalput
     })  
+  },
+  //点击请假申请
+  leaveBtnClick(){
+    wx.navigateTo({
+      url: '../leave/leave'
+    })
+  },
+
+  //点击入职申请
+  applyBtnClick(){
+    wx.navigateTo({
+      url: '../apply/apply'
+    })
+  },
+
+  //点击成员列表
+  listBtnClick(){
+    wx.navigateTo({
+      url: '../list/list'
+    })
   }
 })

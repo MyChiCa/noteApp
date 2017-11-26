@@ -1,0 +1,17 @@
+<!--pages/team/apply/apply.wxml-->
+<view class="list">
+  <view class="apply" wx:for="{{array}}" wx:key="item.id" bindtap="itemClick">
+    <view class="apply-head">
+        <text class="apply-name">{{item.name}}</text>
+        <text class="apply-phone">{{item.phone}}</text>
+    </view>
+    <view class="apply-content">
+       <view class="apply-position">
+          工作职位: {{item.position}}
+       </view>
+       <view class="apply-date">
+          入职时间: {{item.date}}
+       </view>
+    </view>
+  </view>
+</view>

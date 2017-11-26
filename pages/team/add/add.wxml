@@ -7,11 +7,11 @@
         </view>
         <view class="form-item">
            <view class="form-label">初始年假天数</view>
-           <slider name="baseDay" min="1" max="10" value="7" step="1" show-value/>
+           <slider name="baseDays" min="1" max="10" value="7" step="1" show-value/>
         </view>
         <view class="form-item">
           <view class="form-label">工龄加年假天数</view>
-          <slider name="addDay" min="0" max="5" value="1" step="1" show-value/>
+          <slider name="addDays" min="0" max="5" value="1" step="1" show-value/>
         </view>
         <view class="form-item">
             <button formType="submit" type="primary" class="form-button">提交</button>

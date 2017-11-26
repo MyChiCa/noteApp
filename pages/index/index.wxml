@@ -13,11 +13,6 @@
     <text class="cell-title">历史</text>
     <image src="../../image/icon-right.png"></image>
   </view>
-  
-  <view class="cell-item">
-    <text class="cell-title">消息</text>
-    <image src="../../image/icon-right.png"></image>
-  </view>
 </view>
 
 <!--管理员功能-->
