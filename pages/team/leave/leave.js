@@ -1,129 +1,55 @@
 // pages/team/leave/leave.js
+const api = require("../../../utils/api")
+const moment = require("../../../lib/moment.min")
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    array: [{
-      id: 1,
-      name:"朱顺胜",
-      title: "生病请假",
-      content: "病假工资由用人单位按不低于当地最低工资标准80%自主确定支付标准。",
-      date: "2017-12-02",
-      days: 0.5,
-      status: 0
-    }, {
-      id: 2,
-      name: "朱顺胜",
-      title: "装病请假",
-      content: "病假工资由用人单位按不低于当地最低工资标准80%自主确定支付标准。",
-      date: "2017-12-03",
-      days: 3,
-      status: 2
-    }, {
-      id: 3,
-      name: "朱顺胜",
-      title: "智能请假",
-      content: "病假工资由用人单位按不低于当地最低工资标准80%自主确定支付标准。",
-      date: "2017-12-04",
-      days: 2,
-      status: 1
-    }, {
-      id: 4,
-      name: "朱顺胜",
-      title: "有事请假",
-      content: "病假工资由用人单位按不低于当地最低工资标准80%自主确定支付标准。",
-      date: "2017-12-04",
-      days: 1,
-      status: 1
-    }, {
-      id: 5,
-      name: "朱顺胜",
-      title: "有事请假",
-      content: "病假工资由用人单位按不低于当地最低工资标准80%自主确定支付标准。",
-      date: "2017-12-04",
-      days: 1,
-      status: 1
-    }, {
-      id: 6,
-      name: "朱顺胜",
-      title: "有事请假",
-      content: "病假工资由用人单位按不低于当地最低工资标准80%自主确定支付标准。",
-      date: "2017-12-04",
-      days: 1,
-      status: 1
-    }]
+    array: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    api.ManagementCenter().then(e => {
+      console.log(e);
+      if (e.data.errorCode == 0) {
+        let array = e.data.data;
+        array.map(item => {
+          item.start_format = moment(item.startTime * 1000).format("YYYY-MM-DD");
+          item.end_format = moment(item.endTime * 1000).format("YYYY-MM-DD");
+          return item;
+        })
+        console.log(array);
+        this.setData({
+          array: array
+        })
+      }
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  },
-
-  itemClick(e){
+  itemClick(e) {
     wx.showActionSheet({
-       itemList:["通过","拒绝"],
-       success: function (res) {
-         if(res.tapIndex !== undefined){
-           console.log(res.tapIndex);
-         }
-         
-       },
-       fail: function (res) {
-         console.log(res.errMsg)
-       }
-      })
+      itemList: ["通过", "拒绝"],
+      success: function (res) {
+        // debugger;
+        if (res.tapIndex !== undefined) {
+          api.handleapply({
+            id: 1,
+            status: 1
+          })
+        }
+      },
+      fail: function (res) {
+        if (res.tapIndex !== undefined) {
+          api.handleapply({
+            id: this.data.array[res.tapIndex].id,
+            status: 2
+          })
+        }
+      }
+    })
   }
 })

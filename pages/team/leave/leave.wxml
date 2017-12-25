@@ -3,12 +3,11 @@
   <view class="leave" wx:for="{{array}}" wx:key="item.id" bindtap="itemClick">
       <view class="leave-head">
           <text class="leave-title">{{item.title}}</text>
-          <text class="leave-name">{{item.name}}</text>
       </view>
-      <view class="leave-content">病假工资由用人单位按不低于当地最低工资标准80%自主确定支付标准。</view>
+      <view class="leave-content">{{item.content}}</view>
       <view class="leave-footer">
-          <text class="leave-date">2017-12-07</text>
-          <text class="leave-days">1 天</text>
+          <text class="leave-date">{{item.start_format}}</text>
+          <text class="leave-days">{{item.end_format}}</text>
       </view>
   </view>
 

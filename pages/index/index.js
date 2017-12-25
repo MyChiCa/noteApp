@@ -16,6 +16,8 @@ Page({
         page: '../team/add/add'
       },{
         page: '../team/index/index'
+      },{
+        page: '../apply/apply'
       }]
   },
   //事件处理函数

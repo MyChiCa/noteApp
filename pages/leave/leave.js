@@ -1,12 +1,12 @@
 const util = require('../../utils/util.js')
 const date = new Date();
+const api = require("../../utils/api")
+const moment = require("../../lib/moment.min")
 const start = util.formatDate(date);
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
+     theme:"",//主题
+     reason:"", //理由
      date:start,
      array:['半天','一天','两天','三天','四天','五天','六天','七天'],
      objectArray:[{id:0,value:0.5}, {id: 1,value: 1}, {id: 2,
@@ -14,54 +14,15 @@ Page({
          value:6 }, {id: 7, value: 7}],
      days:1
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-  
+  bindReasonInput(e){
+    this.setData({
+      reason:e.detail.value
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
+  bindThemeInput(e){
+    this.setData({
+      theme:e.detail.value
+    });
   },
   bindDateChange(e){
     this.setData({
@@ -72,5 +33,29 @@ Page({
     this.setData({
       days: e.detail.value
     })
+  },
+  // 提交按钮
+  formSubmit(e){
+    var apply = e.detail.value;
+    if (apply.theme == ""){
+      wx.showToast({
+        title: '请完善表单'
+      })
+    } else if (apply.reason == ""){
+      wx.showToast({
+        title: '请完善表单'
+      })
+    }else{
+      api.createVacate({
+        fromUserId:"12345",
+        toUserId:"12345455",
+        title:apply.theme,
+        content:apply.reason,
+        startTime:moment(this.data.date).format("X") * 1,
+        endTime:moment(this.data.date).format("X") * 1 + this.data.days * 3600 * 24,
+        teamId:1,
+      })
+    }
+    // api.
   }
 })

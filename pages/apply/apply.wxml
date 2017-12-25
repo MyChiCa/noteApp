@@ -4,25 +4,23 @@
     <form bindsubmit="formSubmit">
         <view class="form-item">
           <view class="form-label">真实姓名</view>
-          <input name="name" class="form-input" placeholder="姓名" />
+          <input name="name" class="form-input" placeholder="姓名" bindinput="bindNameInput"/>
+        </view>
+        <view class="form-item">
+          <view class="form-label">性别</view>
+          <radio-group class="radio-group" bindchange="radioChange">
+            <label class="radio" wx:for="{{items}}">
+              <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+            </label>
+          </radio-group>
         </view>
         <view class="form-item">
           <view class="form-label">工作职位</view>
-          <input name="position" class="form-input" placeholder="职位" />
+          <input name="position" class="form-input" placeholder="职位" bindinput="bindPositionInput" />
         </view>
         <view class="form-item">
           <view class="form-label">联系手机</view>
-          <input name="phone" type="number" maxlength="11" class="form-input" placeholder="手机" />
-        </view>
-        <!--开始日期-->
-        <view class="form-item">
-          <view class="form-picker">
-            <picker name="date" mode="date" value="{{date}}" bindchange="bindDateChange">
-              <view class="picker">
-                入职时间: {{date}}
-              </view>
-            </picker>
-          </view>
+          <input name="phone" type="number" maxlength="11" class="form-input" bindinput="bindPositionInput" placeholder="手机" />
         </view>
         <!--/开始日期-->
         <view class="form-item">

@@ -1,71 +1,53 @@
+let api = require("../../../utils/api");
+let moment = require("../../../lib/moment.min");
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    
+    teamName:""
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  bindKeyInput: function(e) {
+    this.setData({
+      teamName: e.detail.value
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
   formSubmit(e){
-    var team = e.detail.value;
-    if(team.name == ""){
+    if(this.data.teamName == ""){
       wx.showToast({
         title: '请输入团队名称'
       })
     }else{
-      wx.redirectTo({
-        url:"/pages/team/index/index"
-      });
+      console.log(moment)
+      api.createTeam({
+        "userId":"12345455",
+        "timestamp":moment().format("X")*1,
+          "data":{
+            "userId": "12345455",
+            "teamName": this.data.teamName,
+            "initialDay":7
+          }
+      }).then(e=>{
+        if(e.data.errorCode == 0){
+          wx.showToast({
+            title: '成功',
+            icon: 'succes',
+            duration: 1000,
+            mask: true
+          })
+          wx.redirectTo({
+            url:"/pages/team/index/index"
+          });
+        }else{
+          wx.showToast({
+            title: '失败',
+            // icon: 'succes',
+            duration: 1000,
+            mask: true
+          })
+        }
+      })
     }
   }
 })

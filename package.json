@@ -1,0 +1,22 @@
+{
+  "name": "noteapp",
+  "version": "1.0.0",
+  "description": "便捷请假小程序",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhuss/noteApp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhuss/noteApp/issues"
+  },
+  "homepage": "https://github.com/zhuss/noteApp#readme",
+  "dependencies": {
+    "moment": "^2.20.1"
+  }
+}

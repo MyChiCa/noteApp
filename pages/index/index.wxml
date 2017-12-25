@@ -27,6 +27,11 @@
     <text class="cell-title">管理团队</text>
     <image src="../../image/icon-right.png"></image>
   </view>
+  <!-- 加入团队 -->
+  <view class="cell-item" data-index="4" bindtap="itemClick">
+    <text class="cell-title">加入团队</text>
+    <image src="../../image/icon-right.png"></image>
+  </view>
 </view>
 
 

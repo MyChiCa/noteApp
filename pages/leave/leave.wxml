@@ -1,14 +1,14 @@
 <!--pages/leave/leave.wxml-->
 <view>
   <view class="form">
-    <form>
+    <form bindsubmit="formSubmit">
         <view class="form-item">
           <view class="form-label">请假主题</view>
-          <input class="form-input" maxlength="10" placeholder="请假主题"/>
+          <input class="form-input" maxlength="10"  name="theme" placeholder="请假主题" bindinput="bindThemeInput" />
         </view>
         <view class="form-item">
           <view class="form-label">请假理由</view>
-          <textarea class="form-textarea"  placeholder="请假理由" />
+          <textarea class="form-textarea"  placeholder="请假理由" name="reason" bindinput="bindReasonInput"/>
         </view>
         <!--开始日期-->
         <view class="form-item">
@@ -32,9 +32,8 @@
           </view>
         </view>
         <!--/请假天数-->
-
         <view class="form-item">
-            <button type="primary" class="form-button">提交</button>
+            <button formType="submit" type="primary" class="form-button">提交</button>
         </view>
     </form>
   </view>
